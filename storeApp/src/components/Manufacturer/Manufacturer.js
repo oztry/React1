@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Manufacturer = ({ item, selectedManufacturer, onManufacturerChange }) => {
+const Manufacturer = ({ item, isSelected, onManufacturerChange }) => {
   return (
     <div>
       <input
@@ -9,7 +9,7 @@ const Manufacturer = ({ item, selectedManufacturer, onManufacturerChange }) => {
         name="manufacturere"
         id={item}
         value={item}
-        checked={selectedManufacturer === item}
+        checked={isSelected}
         onChange={onManufacturerChange}
       />
       <label htmlFor={item}>{item}</label>
@@ -19,7 +19,7 @@ const Manufacturer = ({ item, selectedManufacturer, onManufacturerChange }) => {
 
 Manufacturer.propTypes = {
   item: PropTypes.string.isRequired,
-  selectedManufacturer: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool.isRequired,
   onManufacturerChange: PropTypes.func.isRequired
 };
 

@@ -1,13 +1,13 @@
 import React from "react";
 import Styles from "./Footer.module.css";
-import AppStyles from "../../App.module.css";
+import WithContainer from "../WithContainer/WithContainer";
+import FooterText from "../FooterText/FooterText";
+
+const FooterTextWithContainer = WithContainer(FooterText);
 
 const Footer = () => (
   <footer className={Styles.footer}>
-    <div className={AppStyles.container}>
-      <p>Shop © 2020</p>
-      <p>Designed by Andrzej</p>
-    </div>
+    <FooterTextWithContainer />
   </footer>
 );
 

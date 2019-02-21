@@ -1,23 +1,14 @@
 import React from "react";
 import Styles from "./NavBar.module.css";
-import AppStyles from "../../App.module.css";
+import WithContainer from "../WithContainer/WithContainer";
+import NavBarLinks from "../NavBarLinks/NavBarLinks";
 
-const Menu = () => (
+const NavBarLinksWithContainer = WithContainer(NavBarLinks);
+
+const NavBar = () => (
   <nav className={Styles.navbar}>
-    <div className={AppStyles.container}>
-      <ul className={Styles.nav}>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="catalog">Catalog</a>
-        </li>
-        <li>
-          <a href="about">About</a>
-        </li>
-      </ul>
-    </div>
+    <NavBarLinksWithContainer />
   </nav>
 );
 
-export default Menu;
+export default NavBar;

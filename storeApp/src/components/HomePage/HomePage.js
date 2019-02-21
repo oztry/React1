@@ -1,7 +1,8 @@
 import React from "react";
 import ProductService from "../../services/products.service";
 import Products from "../Products/Products";
-import AppStyles from "../../App.module.css";
+import BigHeader from "../BigHeader/BigHeader";
+import SmallHeader from "../SmallHeader/SmallHeader";
 
 const HomePage = () => {
   const desktopProducts = ProductService.getFeaturedProductsByCategory(
@@ -9,17 +10,16 @@ const HomePage = () => {
   );
   const tabletProducts = ProductService.getFeaturedProductsByCategory("tablet");
   return (
-    <div className={AppStyles.container}>
-      <h1 className={AppStyles.headerbig}>Welcome to our store</h1>
+    <>
+      <BigHeader text="Welcome to our store" />
 
-      <h2 className={AppStyles.headersmall}>Desktops</h2>
+      <SmallHeader text="Desktops" />
 
       <Products products={desktopProducts} />
-
-      <h2 className={AppStyles.headersmall}>Tablets</h2>
+      <SmallHeader text="Tablets" />
 
       <Products products={tabletProducts} />
-    </div>
+    </>
   );
 };
 

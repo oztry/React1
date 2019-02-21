@@ -3,7 +3,7 @@ import ProductService from "../../services/products.service";
 import Products from "../Products/Products";
 import Manufacturer from "../Manufacturer/Manufacturer";
 import Styles from "./CatalogPage.module.css";
-import AppStyles from "../../App.module.css";
+import BigHeader from "../BigHeader/BigHeader";
 
 class CatalogPage extends Component {
   state = {
@@ -35,8 +35,8 @@ class CatalogPage extends Component {
         selectedManufacturer
       );
     return (
-      <div className={AppStyles.container}>
-        <h1 className={AppStyles.headerbig}>Catalog</h1>
+      <>
+        <BigHeader text="Catalog" />
         <div className={Styles.catalog}>
           <div className={Styles.columnleft}>
             <div className={Styles.filter}>
@@ -72,7 +72,7 @@ class CatalogPage extends Component {
                   <Manufacturer
                     key={item}
                     item={item}
-                    selectedManufacturer={selectedManufacturer}
+                    isSelected={item === selectedManufacturer}
                     onManufacturerChange={this.handleManufacturerChange}
                   />
                 ))}
@@ -84,7 +84,7 @@ class CatalogPage extends Component {
             <Products products={products} />
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -1,9 +1,9 @@
 import React from "react";
-import AppStyles from "../../App.module.css";
+import BigHeader from "../BigHeader/BigHeader";
 
 const AboutPage = () => (
-  <div className={AppStyles.container}>
-    <h1 className={AppStyles.headerbig}>About</h1>
+  <>
+    <BigHeader text="About" />
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
       scelerisque odio pharetra, rhoncus velit eget, feugiat magna. Integer ac
@@ -26,7 +26,7 @@ const AboutPage = () => (
       tellus pellentesque pharetra. Quisque pharetra lectus molestie, posuere
       lectus eget, tempor justo.
     </p>
-  </div>
+  </>
 );
 
 export default AboutPage;
